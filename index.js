@@ -1,1 +1,1 @@
-console.log('This is the first line!');
+console.log('I will be the second commit.');
