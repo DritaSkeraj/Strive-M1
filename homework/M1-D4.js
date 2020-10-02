@@ -45,6 +45,20 @@ const crazyDiff = (a, b=19) =>{
 }
 console.log(`E3: a=25, b=19, crazyDiff=${crazyDiff(25)}`);
 
+// function crazyDiff2(num){
+//     let difference = num -19;
+//     if(difference < 0){
+//         difference = -difference;
+//     }
+//     if (num < 19){
+//         difference = difference * 3;
+//     }
+//     return difference;
+// }
+
+
+
+
 /* EXERCISE 4
 Write a function "boundary" which accept an integer N and returns true 
 if N is within 20 and 100 (included) or equal to 400.
@@ -106,6 +120,10 @@ const reverseString = (theString) =>{
 }
 console.log(`E7: string: ${reverseString('string')}`);
 
+// function reverseString(word){
+//     return word.split('').reverse().join('');
+// }
+
 /* EXERCISE 8
 Write a function "upperFirst" to capitalize the first letter of each word of 
 a given string passed as parameter
@@ -117,7 +135,7 @@ const upperFirst = (theString) =>{
     let word = '';
     let finalSentence = '';
     for(let i=0; i<stringArray.length; i++){
-        let word = stringArray[i];
+        word = stringArray[i];
         word = word.charAt(0).toUpperCase() + word.slice(1);
         capitalizedStringArray.push(word);
     }
@@ -132,6 +150,7 @@ Write a function "cutString" to create a new string without the first and last c
 
 const cutString = (theString) =>{
     return theString.substring(1, theString.length -1);
+    //return theString.substr(1).slice(0, theString.length -2);
 }
 console.log('E9: function=', cutString('function'));
 
