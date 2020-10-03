@@ -345,41 +345,18 @@ const movies = [
 
 /* Ex.12 
     Write the function OlderMovie that finds the older movie in the array
-
-    {
-    Title: "The Lord of the Rings: The Fellowship of the Ring",
-    Year: "2001",
-    imdbID: "tt0120737",
-    Type: "movie",
-    Poster:
-      "https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_SX300.jpg",
-  },
 */
 
 const olderMovies = (movies) =>{
-  let olderYear = 0;
-  let Year = 0;
-  let Title = '';
-  let imdbID = '';
-  let Type = '';
-  let Poster = '';
-  for(let i=0; i < movies.length; i++){
-    if(movies[i].Year > olderYear){
-      olderYear = movies[i].Year;
-       Year = movies[i].Year;
-       Title = movies[i].Title;
-       imdbID = movies[i].imdbID;
-       Type = movies[i].Type;
-       Poster = movies[i].Poster;
-    } else {}
+  let result = { Year: 2100};
+
+  for(let i = 0; i< movies.length; i++){
+    let movie = movies[i];
+    let currentYear = parseInt(movie.Year);
+    if (currentYear < result.Year)
+      result = movie;
   }
-  return {
-    Title: Title,
-    Year: Year,
-    imdbID: imdbID,
-    Type: Type,
-    Poster:Poster
-  }
+  return result;
 }
 console.log('Ex.12: ', olderMovies(movies));
 
@@ -407,13 +384,13 @@ console.log('E14: ', onlyTitles(movies));
    Write the function OnlyThisMillennium that returns only the movies produced in this millennium
 */
 const onlyThisMilenium = (movies) =>{
-  let thisMil = [];
-  for(let i=0; i<movies.length; i++){
-    if(movies.Year >= 2000){
-      thisMil.push(movies[i]);
+  let thisMilMovies = [];
+  for( let i=0; i<movies.length; i++){
+    if(parseInt(movies[i].Year) >= 2000){
+      thisMilMovies.push(movies[i]);
     }
   }
-  return thisMil;
+  return thisMilMovies;
 }
 
 console.log('E15: ', onlyThisMilenium(movies));
@@ -431,8 +408,29 @@ console.log('E15: ', onlyThisMilenium(movies));
 */
 
 /* Ex.19
-    Write the function SearchAndDivide that receives a string and returns an object with an array "match" with all the movies that contains the title and another array "nonMatch" with the other movies
+    Write the function SearchAndDivide that receives 
+    a string and returns an object with an array 
+    "match" with all the movies that contains the 
+    title and another array "nonMatch" with the other
+     movies
 */
+
+function searchAndDivide(str){
+    let match = [];
+    let nonMatch = [];
+    for(let x = 0; x < movies.length; x++){
+        if(movies[x].Title.includes(str)){
+            match.push(movies[x]);
+        } else {
+            nonMatch.push(movies[x]);
+        }
+    }
+    return {
+        match: match,
+        nonMatch: nonMatch
+    };
+};
+console.log('Ex. 19: ', searchAndDivide('Avangers'));
 
 /* Ex.20
    Write the function DeleteX that receives a number and returns an array without the element in that position
@@ -449,6 +447,15 @@ console.log('E15: ', onlyThisMilenium(movies));
   **
   ***
 */
+function halfTree(h){
+    let char = '*';
+    for(let i=0; i<h; i++){
+        for(let j=0; j<h; j++){
+            console.log(char.repeat(i));
+        }
+    }
+}
+halfTree(5);
 
 /* Ex.22 
   Create a function Tree that receives the height and creates an "*" tree with that height
@@ -458,8 +465,20 @@ console.log('E15: ', onlyThisMilenium(movies));
    *** 
   *****
 */
+function Tree(h){
+  const char = '*';
+  const space = ' ';
+  for(let x = 1; x <= h; x++){
+    console.log(space.repeat(h - x) / char.repeat(x * 2 -1));
+  }
+}
+Tree(3);
 
 /* Ex.23
   Create a function IsItPrime that receives a number and return true if the number is a prime number
 */
+
+
+
+
 
