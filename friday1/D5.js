@@ -345,6 +345,15 @@ const movies = [
 
 /* Ex.12 
     Write the function OlderMovie that finds the older movie in the array
+
+    {
+    Title: "The Lord of the Rings: The Fellowship of the Ring",
+    Year: "2001",
+    imdbID: "tt0120737",
+    Type: "movie",
+    Poster:
+      "https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_SX300.jpg",
+  },
 */
 
 const olderMovies = (movies) =>{
@@ -397,45 +406,84 @@ console.log('E15: ', onlyThisMilenium(movies));
 /* Ex.16 
     Write the function GetMovieById that receives an ID and returns the movie with the given ID
 */
+const getMovieById = (id) =>{
+  let result;
+  for(let i=0; i<movies.length; i++){
+    if(movies[i].imdbID === id){
+      result = movies[i];
+      break;
+    }
+  }
+  return result;
+}
+
+console.log('Ex. 16: ', getMovieById('tt0399295'));
 
 
 /* Ex.17
     Write the function SumYears that returns the sum of the years the movie has been produced
 */
+const sumYears = (movies) =>{
+  let sum = 0;
+  for(let i=0; i<movies.length; i++){
+    sum += parseInt(movies[i].Year);
+  }
+  return sum;
+}
+console.log('Ex. 17: ', sumYears(movies));
 
 /* Ex.18
-    Write the function SearchMovie that receives a string and returns all the movies with that string in the title
+    Write the function SearchMovie that receives a string and returns all the movies 
+    with that string in the title
 */
+const searchMovie = (string) =>{
+  let result = [];
+  for(let i=0; i<movies.length; i++){
+    if(movies[i].Title.indexOf(string) !== -1){
+      result.push(movies[i]);
+    }
+  }
+  return result;
+}
+console.log('Ex.18: ', searchMovie('Avengers'));
 
 /* Ex.19
-    Write the function SearchAndDivide that receives 
-    a string and returns an object with an array 
-    "match" with all the movies that contains the 
-    title and another array "nonMatch" with the other
-     movies
+    Write the function SearchAndDivide that receives a string and returns an object 
+    with an array "match" with all the movies that contains the title and another 
+    array "nonMatch" with the other movies
 */
-
-function searchAndDivide(str){
-    let match = [];
-    let nonMatch = [];
-    for(let x = 0; x < movies.length; x++){
-        if(movies[x].Title.includes(str)){
-            match.push(movies[x]);
-        } else {
-            nonMatch.push(movies[x]);
-        }
+const searchAndDivide = (string) =>{
+  let match = [];
+  let nonMatch = [];
+  for(let i=0; i<movies.length; i++){
+    if(movies[i].Title.indexOf(string) !== -1){
+      match.push(movies[i]);
+    } else {
+      nonMatch.push(movies[i]);
     }
-    return {
-        match: match,
-        nonMatch: nonMatch
-    };
-};
-console.log('Ex. 19: ', searchAndDivide('Avangers'));
+  }
+  return {
+    match: match,
+    nonMatch: nonMatch
+  }
+}
+console.log('Ex. 19: ', searchAndDivide('Avengers'));
 
 /* Ex.20
-   Write the function DeleteX that receives a number and returns an array without the element in that position
+   Write the function DeleteX that receives a number and returns an array without 
+   the element in that position
 */
-
+const deleteX = (index) =>{
+  let result = [];
+  for(let i=0; i<movies.length; i++){
+    if(index === i)
+      continue;
+    else 
+      result.push(movies[i]);
+  }
+  return result;
+}
+console.log('Ex. 20: ', deleteX(0));
 // JS Advanced
 
 /* Ex.21
@@ -447,15 +495,14 @@ console.log('Ex. 19: ', searchAndDivide('Avangers'));
   **
   ***
 */
-function halfTree(h){
-    let char = '*';
-    for(let i=0; i<h; i++){
-        for(let j=0; j<h; j++){
-            console.log(char.repeat(i));
-        }
-    }
+const halfTree = (h) => {
+  let char = '*';
+  for(let i=1; i<=h; i++){
+    console.log(char.repeat(i));      
+  }
 }
-halfTree(5);
+console.log('Ex.21: ');
+halfTree(3);
 
 /* Ex.22 
   Create a function Tree that receives the height and creates an "*" tree with that height
@@ -465,20 +512,23 @@ halfTree(5);
    *** 
   *****
 */
-function Tree(h){
+const tree = (h) => {
   const char = '*';
   const space = ' ';
   for(let x = 1; x <= h; x++){
-    console.log(space.repeat(h - x) / char.repeat(x * 2 -1));
+    console.log(space.repeat(h - x) + char.repeat(x * 2 -1));
   }
 }
-Tree(3);
+console.log('Ex.22: ');
+tree(3)
 
 /* Ex.23
-  Create a function IsItPrime that receives a number and return true if the number is a prime number
+  Create a function IsItPrime that receives a number and return true if the number is a 
+  prime number
 */
-
-
-
-
-
+const isItPrime = (num) =>{
+  for(let i=2; i<num; i++)
+    if(num % i === 0) return false;
+  return num > 1;
+}
+console.log('Ex. 23: ', isItPrime(18),', ', isItPrime(17));
