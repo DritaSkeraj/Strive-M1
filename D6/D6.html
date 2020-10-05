@@ -15,7 +15,7 @@
     <table> 
         <tr> 
             <th colspan=2>
-                <h2 class='tableDesc'>Top five products: </h2>
+                <h2 class='tableDesc' id='topFive'>This would be the default heading</h2>
             </th> 
             <tr> 
                 <td rowspan="3">
@@ -133,6 +133,10 @@
             document.body.style.backgroundColor = "#f1f1da";
         }
         changeBackground();
+        function changeText(){
+            document.getElementById("topFive").innerHTML = "Top five products of the week:";
+        }
+        changeText();
     </script>
 </body>
 
