@@ -1,0 +1,82 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    color: black;
+    text-align: center;
+    background-color: white;
+}
+h1{
+    font-family: 'Tangerine', cursive;
+    font-size: 3rem;
+    text-align: center;
+    padding: 70px;
+    color: white;
+    background-color: black;
+    border-bottom: 3px solid red;
+    /* text-decoration: underline;
+    text-decoration-color: red; */
+}
+table{
+    margin: 0 auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+.tableDesc{
+    font-family: 'Inconsolata', monospace;
+    font-size: 1.5rem;
+}
+td img{
+    padding: 10px;
+}
+p{
+    font-family: 'Inconsolata', monospace;
+}
+h3{
+    font-family: sans-serif;
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+table tr td h3{
+    font-size: 1.5rem;
+}
+.redText{
+    color: red;
+    font-weight: bold;
+}
+footer{
+    background-color: black;
+    color: white;
+    font-family: serif;
+    padding: 20px;
+    margin-top: 15px;
+}
+
+  .contact-form{
+    width: 70%;
+    min-height: 50px;
+    position: relative;
+    left: 17%;
+  }
+  form{
+    text-align: left;
+    width: 70%;
+    margin: 0 auto;
+  }
+  input, textarea{
+    width: 90%;
+    padding: 4px;
+    margin: 4px;
+  }
+  input[type=submit]{
+    background: black;
+    border: 1px solid #000;
+    color: white;
+    border-radius: 4px 4px 0px 0px;
+  }
+  input[type=submit]:hover{
+    color: black;
+    font-weight: bold;
+    background: white;
+  }  
