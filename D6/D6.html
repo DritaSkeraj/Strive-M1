@@ -125,7 +125,7 @@
 
     <footer>
         <p>&copy The Smartphone Shop</p>
-        <p>Adress: William Walker, Prizren</p>
+        <p id='address'>Adress: William Walker, Prizren</p>
     </footer>
 
     <script>
@@ -137,6 +137,10 @@
             document.getElementById("topFive").innerHTML = "Top five products of the week:";
         }
         changeText();
+        function changeAddress(){
+            document.getElementById("address").innerHTML = "Silicon Valley, California";
+        }
+        changeAddress();
     </script>
 </body>
 
