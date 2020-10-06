@@ -1,0 +1,166 @@
+<html>
+<head>
+    <title>Smartphone Shop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
+    <link rel='stylesheet' href="style.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>The Smartphone Shop</h1>
+    </header>
+
+    <table> 
+        <tr> 
+            <th colspan=2>
+                <h2 class='tableDesc' id='topFive'>This would be the default heading</h2>
+            </th> 
+            <tr> 
+                <td rowspan="3">
+                    <img src='./img/first.jpg' alt='smartphone'/>
+                </td> 
+                <td>
+                    <a href='https://www.amazon.com/Samsung-SM-A015M-Display-Unlocked-International/dp/B084V9FKK6/ref=sr_1_3?dchild=1&keywords=smartphone&qid=1601903729&sr=8-3'>
+                        <h3>Samsung Galaxy A01<h3></a>
+                </td>             
+            </tr> 
+            <tr> 
+                <td>
+                    <p>Samsung Galaxy A01 (A015M) 16GB, Dual SIM, GSM Unlocked, 5.7” Display </p>
+                </td> 
+            </tr> 
+            <tr> 
+                <td><p class='redText'>Price: 101$</p></td> 
+            </tr> 
+            <tr> 
+                <td rowspan="3">
+                    <img src='./img/second.jpg' alt='smartphone'/>
+                </td> 
+                <td>
+                    <a href='https://www.amazon.com/BLU-Advance-S5-HD-Smartphone/dp/B07Z45ZP1N/ref=sr_1_4?dchild=1&keywords=smartphone&qid=1601903729&sr=8-4'>
+                        <h3>BLU Advance<h3></a>
+                </td>             
+            </tr> 
+            <tr> 
+                <td>
+                    <p>BLU Advance S5 HD – Unlocked Single Sim Smartphone, 16GB+1GB RAM </p>
+                </td> 
+            </tr> 
+            <tr> 
+                <td><p class='redText'>Price: 71$</p></td> 
+            </tr> 
+            <tr> 
+                <td rowspan="3">
+                    <img src='./img/third.jpg' alt='smartphone'/>
+                </td> 
+                <td>
+                    <a href='https://www.amazon.com/UMIDIGI-Unlocked-4150mAh-Capacity-Smartphone/dp/B08924QPQZ/ref=sr_1_5?dchild=1&keywords=smartphone&qid=1601903729&sr=8-5'>
+                        <h3>UMIDIGI A7 Pro<h3></a>
+                </td>             
+            </tr> 
+            <tr> 
+                <td>
+                    <p>UMIDIGI A7 Pro Unlocked Cell Phones(4GB+128GB) 6.3" FHD+ Full Screen</p>
+                </td> 
+            </tr> 
+            <tr> 
+                <td><p class='redText'>Price: 200$</p></td> 
+            </tr> 
+            <tr> 
+                <td rowspan="3">
+                    <img src='./img/fourth.jpg' alt='smartphone'/>
+                </td> 
+                <td>
+                    <a href='https://www.amazon.com/Google-Pixel-4a-Unlocked-Smartphone/dp/B08CFSZLQ4/ref=sr_1_6?dchild=1&keywords=smartphone&qid=1601903729&sr=8-6'>
+                        <h3>Google pixel<h3></a>
+                </td>             
+            </tr> 
+            <tr> 
+                <td>
+                    <p>Google Pixel 4a - New Unlocked Android Smartphone - 128 GB of Storage</p>
+                </td> 
+            </tr> 
+            <tr> 
+                <td><p class='redText'>Price: 400$</p></td> 
+            </tr> 
+            <tr> 
+                <td rowspan="3">
+                    <img src='./img/fifth.jpg' alt='smartphone'/>
+                </td> 
+                <td>
+                    <a href='https://www.amazon.com/Samsung-A207M-Snapdragon-Unlocked-International/dp/B07ZDH95L4/ref=sr_1_8?dchild=1&keywords=smartphone&qid=1601903729&sr=8-8'>
+                        <h3>Samsung Galaxy A20s<h3></a>
+                </td>             
+            </tr> 
+            <tr> 
+                <td>
+                    <p>Samsung Galaxy A20s A207M/DS, 32GB/3GB RAM Dual SIM 6.5''HD+ Snapdragon 450</p>
+                </td> 
+            </tr> 
+            <tr> 
+                <td><p class='redText'>Price: 201$</p></td> 
+            </tr> 
+    </table>
+    <br><br>
+    <iframe height="500px"  frameborder="0" width="64%" 
+    src="https://maps.google.com/maps?q=prizren&t=&z=13&ie=UTF8&iwloc=&output=embed">
+    </iframe>
+
+    <div class="contact-form">
+        <h3>You can message us here: </h3>
+        <form>
+          <label for="name">Name:</label><br>
+          <input type="text" id="name"><br>
+          <label for="surname">Surname:</label><br>
+          <input type="text" id="surname"><br>
+          <label for="email">Email:</label><br>
+          <input type="email" id="email"><br>
+          <label for="message">Message</label><br>
+          <textarea name="message" rows=6 columns=6 id="txtArea"></textarea><br>
+          <input type="Submit" value="Send">
+        </form>
+    </div>
+
+    <h2 id="listTitle" onclick="changeListTitle()">Todo List</h2>
+          <ul id="firstList">
+              <li onClick="firstULDisappear()"><p>1st</p></li>
+              <li>2nd</li>
+              <li>3rd</li>
+          </ul>
+          <ul id="secondList">
+              <li>1st</li>
+              <li>2nd</li>
+              <li>3rd</li>
+          </ul>
+          <div>
+              <p>This text is just for the exercise</p>
+          </div>
+          <button onclick="changePContent()" value='ChangePContent'>ChangePContent</button>
+
+    <footer>
+        <p>&copy The Smartphone Shop</p>
+        <p id='address'>Adress: William Walker, Prizren</p>
+    </footer>
+
+    <script>
+        function changeBackground(){
+            document.body.style.backgroundColor = "#f1f1da";
+        }
+        changeBackground();
+        function changeText(){
+            document.getElementById("topFive").innerHTML = "Top five products of the week:";
+        }
+        changeText();
+        function changeAddress(){
+            document.getElementById("address").innerHTML = "Silicon Valley, California";
+        }
+        changeAddress();
+
+        
+    </script>
+    <script src='D7.js'></script>
+</body>
+
+</html>
