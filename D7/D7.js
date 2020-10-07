@@ -26,10 +26,11 @@
 
  const addClassToTitle = function () {
     let title = document.querySelector('h1');
-    title.addEventListener("mouseover", function() {   
-        //document.querySelector('h1').classList.add('red');
-        title.style.color = 'red';
-      }, false);
+    // title.addEventListener("mouseover", function() {   
+    //     //document.querySelector('h1').classList.add('red');
+    //     title.style.color = 'red';
+    //   }, false);
+    title.classList.add('red');
   };
   addClassToTitle();
 
@@ -84,10 +85,12 @@ removeClassFromTitle();
   };
   
   /* EXERCISE 6
-       Write a function to add a new item ONLY to the second list (create an input field + add button)
+       Write a function to add a new item ONLY to the second list 
+       (create an input field + add button)
   */
   const addToTheSecond = function (content) {
     let newParagraph = document.createElement('p');
+    let newInput = document.createElement('input');
     newParagraph.innerText = 'The new paragraph';
     document.querySelector('#secondList').appendChild(newParagraph);
   }; 
@@ -100,6 +103,7 @@ removeClassFromTitle();
       //theUl.style.display = 'none';
       theUl.innerHTML = '';
   };
+
   /* EXERCISE 8
       Write a function to make the background of every UL green (button)
   */
