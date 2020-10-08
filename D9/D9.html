@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <!--
+        BINGO CHALLENGE!!!
+        Create programmatically (with JS) a BINGO board with 76 cells, from 1 to 76.
+        Create a button to randomize a number from 1 to 76. The same number should be highlighted on the bingo board
+
+        EXTRA: 
+        - Take ALWAYS a new number (avoid randoming 10 3 times for example)
+        - Create a USER BOARD with random 24 numbers that highlights as the main board does
+        - Let the user choose HOW MANY user boards he's willing to play with and create them.
+    -->
+    <head>
+        <meta charset="utf-8" />
+        <title>Bingo</title>
+        <style>
+            #bingoBoard{
+                width: 67%;
+                margin: 0 auto;
+                float: center;
+            }
+            #inputGenerator{
+                padding: 15px;
+                position: absolute;
+                right: 47%;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div id="bingoBoard">
+            <!-- days cells will be inserted here -->
+        </div>
+        <input type='button' onclick='generateRandom()' id='inputGenerator' value='Generate a number'></input>
+        <script>
+            let nums = [];
+            function generateNums(){
+                for(let i=0; i<=25; i++){
+                    let num = Math.floor(Math.random() * 75);
+                    nums.push(num);
+                }
+            }
+            generateNums();
+            console.log(nums);
+            function printNums(){
+                for(let i=0; i<25; i++){
+                    let number = document.createElement('p');
+                    number.innerText = nums[i];
+                    number.style.padding = '15px';
+                    number.style.border = '1px solid black';
+                    number.style.margin = '10px';
+                    number.style.display = 'inline-block';
+                    document.querySelector('#bingoBoard').appendChild(number);
+                }
+            }
+            printNums();
+                let breakLn = document.createElement('br');
+                document.querySelector('#bingoBoard').appendChild(breakLn);
+                document.querySelector('#bingoBoard').appendChild(breakLn);
+                document.querySelector('#bingoBoard').appendChild(breakLn);
+
+            function generateRandom(){
+                let number = Math.floor(Math.random() * 75);
+                console.log(number);
+                let numToAppear = document.createElement('p');
+                numToAppear.style.backgroundColor = 'red';
+                numToAppear.innerText = number;
+                numToAppear.style.padding = '20px';
+                numToAppear.style.margin = '10px';
+                numToAppear.style.width = '10%';
+                numToAppear.style.position = 'absolute';
+                numToAppear.style.right = '64%';
+                document.querySelector('#bingoBoard').appendChild(numToAppear);
+                //return number;
+
+                for(let i=0; i<25; i++){
+                    if(number === nums[i]){
+                        
+                    }
+                }
+            }
+
+            
+        </script>
+    </body>
+</html>
